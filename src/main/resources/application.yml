@@ -1,0 +1,6 @@
+server:
+  #端口号
+  port: 10086
+  servlet:
+    #应用访问路径
+    context-path: /
