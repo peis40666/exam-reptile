@@ -30,12 +30,11 @@ public class ExamPageProcess implements PageProcessor {
 
     @Override
     public void process(Page page) {
-        List<String> links = page.getHtml().links().regex("http://www.wenjuan.top/s/773Mre9/\\d+").all();
-        page.addTargetRequests(links);
+//        List<String> links = page.getHtml().links().regex("http://www.wenjuan.top/s/773Mre9/\\d+").all();
+//        page.addTargetRequests(links);
         String  result   = page.getHtml().regex("(?<=project =).*?(.*)").get();
         String s =  page.getHtml().regex("(?<=globalData =).*?(.*)").get();
         result = result.replace(s,"").replace("// 全局数据对象","").replace("var globalData =","");
-//        sb.append(result);
         page.putField("answer",result);
     }
 
@@ -44,7 +43,4 @@ public class ExamPageProcess implements PageProcessor {
         return Site.me().setDomain("www.wenjuan.top ");
     }
 
-    public static void main(String[] args) {
-
-    }
 }

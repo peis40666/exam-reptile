@@ -68,14 +68,14 @@ public class ExamAnswer {
             sb.append("</br>");
             sb.append(question.getTitle());
             sb.append("</br>");
-            sb.append("答案: ");
+            sb.append("<font color=\"#FF0000\">答案: ");
             for (String answer : answers) {
                 sb.append(answer);
             }
             if(StringUtils.isNotEmpty(question.getCustomAttr().getAnswerAnalysis())){
                 sb.append(question.getCustomAttr().getAnswerAnalysis());
             }
-            sb.append("</br>");
+            sb.append("</font> </br>");
         }
         spider.stop();
         spider.close();
